@@ -8,13 +8,6 @@ import utils
 
 # COMMAND ----------
 
-path = "/Volumes/raw/dms/full-load/points/products/"
-
-df = spark.read.format("parquet").load(path)
-df.schema.json()
-
-# COMMAND ----------
-
 catalog = 'bronze'
 database = dbutils.widgets.get('database')
 table = dbutils.widgets.get('table')
