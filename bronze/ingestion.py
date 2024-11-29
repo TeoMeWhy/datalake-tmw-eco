@@ -8,10 +8,17 @@ import utils
 
 # COMMAND ----------
 
+path = "/Volumes/raw/dms/full-load/points/products/"
+
+df = spark.read.format("parquet").load(path)
+df.schema.json()
+
+# COMMAND ----------
+
 catalog = 'bronze'
 database = dbutils.widgets.get('database')
 table = dbutils.widgets.get('table')
-file_format = "parquet"
+file_format = 'parquet'
 pk_field = dbutils.widgets.get('pk_field')
 updated_field = dbutils.widgets.get('updated_field')
 
