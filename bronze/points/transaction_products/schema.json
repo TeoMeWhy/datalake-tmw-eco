@@ -1,0 +1,41 @@
+{
+  "fields": [
+    {
+      "metadata": {},
+      "name": "Op",
+      "nullable": true,
+      "type": "string"
+    },
+    {
+      "metadata": {},
+      "name": "uuid",
+      "nullable": true,
+      "type": "string"
+    },
+    {
+      "metadata": {},
+      "name": "id_transaction",
+      "nullable": true,
+      "type": "string"
+    },
+    {
+      "metadata": {},
+      "name": "cod_product",
+      "nullable": true,
+      "type": "string"
+    },
+    {
+      "metadata": {},
+      "name": "qtde_product",
+      "nullable": true,
+      "type": "long"
+    },
+    {
+      "metadata": {},
+      "name": "vl_product",
+      "nullable": true,
+      "type": "long"
+    }
+  ],
+  "type": "struct"
+}

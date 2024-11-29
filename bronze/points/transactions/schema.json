@@ -1,0 +1,41 @@
+{
+  "fields": [
+    {
+      "metadata": {},
+      "name": "Op",
+      "nullable": true,
+      "type": "string"
+    },
+    {
+      "metadata": {},
+      "name": "uuid",
+      "nullable": true,
+      "type": "string"
+    },
+    {
+      "metadata": {},
+      "name": "id_customer",
+      "nullable": true,
+      "type": "string"
+    },
+    {
+      "metadata": {},
+      "name": "created_at",
+      "nullable": true,
+      "type": "timestamp"
+    },
+    {
+      "metadata": {},
+      "name": "vl_points",
+      "nullable": true,
+      "type": "long"
+    },
+    {
+      "metadata": {},
+      "name": "desc_sys_origin",
+      "nullable": true,
+      "type": "string"
+    }
+  ],
+  "type": "struct"
+}

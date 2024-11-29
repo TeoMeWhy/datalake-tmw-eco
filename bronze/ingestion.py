@@ -10,10 +10,10 @@ import utils
 
 catalog = 'bronze'
 database = 'points'
-table = 'customers'
+table = 'transaction_products'
 file_format = 'parquet'
 pk_field = 'uuid'
-updated_field = 'updated_at'
+updated_field = 'id_transaction'
 
 ingest_fullload = IngestorBronzeFullLoad(spark=spark,
                                          database=database,
