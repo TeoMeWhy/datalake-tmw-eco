@@ -9,11 +9,11 @@ import utils
 # COMMAND ----------
 
 catalog = 'bronze'
-database = 'points'
-table = 'transaction_products'
-file_format = 'parquet'
-pk_field = 'uuid'
-updated_field = 'id_transaction'
+database = dbutils.widgets.get('database')
+table = dbutils.widgets.get('table')
+file_format = "parquet"
+pk_field = dbutils.widgets.get('pk_field')
+updated_field = dbutils.widgets.get('updated_field')
 
 ingest_fullload = IngestorBronzeFullLoad(spark=spark,
                                          database=database,
