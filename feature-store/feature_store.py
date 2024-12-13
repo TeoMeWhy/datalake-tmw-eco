@@ -13,16 +13,18 @@ fe = FeatureEngineeringClient()
 # COMMAND ----------
 
 catalog = 'feature_store'
-database = 'points'
-table = 'user_life'
+database = dbutils.widgets.get("database")
+table = dbutils.widgets.get("table")
+query_name = dbutils.widgets.get("query_name")
+primary_keys = dbutils.widgets.get("primary_keys").split(",")
+partition_by = dbutils.widgets.get("partition_by")
+dt_start = dbutils.widgets.get("dt_start")
+dt_stop = dbutils.widgets.get("dt_stop")
+monthly = dbutils.widgets.get("monthly") == 'true'
+
+days = dbutils.widgets.get("days")
+
 table_name = f'{catalog}.{database}.{table}'
-dt_start = '2024-04-01'
-dt_stop = '2024-12-01'
-monthly = False
-query_name = 'points_template'
-primary_keys = ['dt_ref', 'id_cliente']
-partition_by = 'dt_ref'
-days = 10000
 
 dates = utils.range_date(dt_start, dt_stop, monthly)
 query = utils.import_query(f"{query_name}.sql")
