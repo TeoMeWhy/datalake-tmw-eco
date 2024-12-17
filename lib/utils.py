@@ -1,4 +1,6 @@
 import datetime
+from databricks.feature_engineering import FeatureLookup
+
 
 def import_query(path):
     with open(path, "r") as open_file:
@@ -25,3 +27,12 @@ def range_date(start, stop, month=False):
         return [i for i in dates if i.endswith('-01')]
     
     return dates
+
+
+def create_feature_lookup(spark, table_name, lookup_key):
+    sufix = table_name.split("_")[-1]
+    rename = {i:i+f"_{sufix}" for i in spark.table(table_name).columns if i not in lookup_key}
+    lookup = FeatureLookup(table_name=table_name,
+                           lookup_key=lookup_key,
+                           rename_outputs=rename)
+    return lookup 
